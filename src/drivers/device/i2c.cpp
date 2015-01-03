@@ -157,7 +157,8 @@ I2C::init()
 	}
 
 	// tell the world where we are
-	log("on I2C bus %d at 0x%02x", _bus, _address);
+	log("on I2C bus %d at 0x%02x (bus: %u KHz, max: %u KHz)",
+		_bus, _address, _bus_clocks[_bus] / 1000, _frequency / 1000);
 
 out:
 	if (_dev != nullptr) {
